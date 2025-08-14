@@ -39,3 +39,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+/.next
+.next/cache/webpack/client-development/11.pack.gz

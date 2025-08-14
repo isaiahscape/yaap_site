@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 
 const navLinks = [
-  { href: "/#home", label: "Home" },
-  { href: "/team.html", label: "Our team" },
+  { href: "/", label: "Home" },
+  { href: "/team", label: "Our team" },
   { href: "/#screenshots", label: "Screenshots" },
-  { href: "/#downloads", label: "Download" },
+  { href: "/devices", label: "Download" },
   { href: "/#community", label: "Community" },
   { href: "/#contribute", label: "Contribute" },
 ];
@@ -21,7 +21,7 @@ const Header: React.FC = () => {
             <img src="/yaaplogo.svg" alt="YAAP Logo" style={{ height: "2rem" }} />
           </a>
         </div>
-        <div className="nav__dropdown">
+        <div className="nav__dropdown" style={{ position: "relative" }}>
           <button
             className="nav__toggle"
             id="nav-toggle"
@@ -39,9 +39,9 @@ const Header: React.FC = () => {
               gap: "0.2rem"
             }}
           >
-            <span style={{ width: 24, height: 3, background: "#333", borderRadius: 2, display: "block" }} />
-            <span style={{ width: 24, height: 3, background: "#333", borderRadius: 2, display: "block" }} />
-            <span style={{ width: 24, height: 3, background: "#333", borderRadius: 2, display: "block" }} />
+            <span style={{ width: 24, height: 3, background: "#ffffffff", borderRadius: 2, display: "block" }} />
+            <span style={{ width: 24, height: 3, background: "#ffffffff", borderRadius: 2, display: "block" }} />
+            <span style={{ width: 24, height: 3, background: "#ffffffff", borderRadius: 2, display: "block" }} />
           </button>
           <div
             id="nav-dropdown-list"
@@ -50,8 +50,8 @@ const Header: React.FC = () => {
               display: open ? "flex" : "none",
               flexDirection: "column",
               position: "absolute",
-              top: "3.5rem",
-              right: "1rem",
+              top: "calc(100% + 8px)", // aligns dropdown just below the button
+              right: 0,
               background: "#fff",
               border: "1px solid #e5e7eb",
               borderRadius: "0.5rem",
